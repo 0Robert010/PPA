@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #494950;
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #FFFFFF; /* Mudado para branco para melhor contraste */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+h2{
+    text-align: center;
+}
+.tab {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab button {
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    color: #282830;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.tab button:hover {
+    background-color: #e0e0e0;
+}
+
+.tab button.active {
+    background-color: #E4002B; /* Vermelho da Toyota */
+    color: white;
+    border-color: #E4002B;
+}
+
+.tabcontent {
+    display: none;
+    padding: 30px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    width: 70%;
+    margin: 20px auto;
+    text-align: left;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: inline-flex; /* Altera para inline-flex */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    margin-bottom: 10px;
+    transform: scale(1.2);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #444;
+    color: #eee;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #E4002B;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #C20023;
+}
+
+/* Estilos adicionais para checkboxes e labels */
+.tabcontent .form-group label {
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.tabcontent .form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+

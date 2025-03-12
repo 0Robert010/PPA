@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário ATEP</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .image-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #343a40; color: white; padding: 10px; text-align: center; font-size: 14px;">
+        <span style="float: left;">Copyright © 2025 Miqueias Masuete. All rights reserved.</span>
+        <span style="float: right;">Developed By Miqueias Masuete</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="image-container">
+        <img src="/static/logo.png" alt="Logo do PPA" height="123" width="171">
+    </div>
+    <h1>PPA - Programa de Preenchimento de ATEP</h1>
+    <div class="tab">
+        <button class="tablinks active" data-tab="dados_essenciais">Dados Essenciais</button>
+        <button class="tablinks" data-tab="stop6">STOP-6</button>
+        <button class="tablinks" data-tab="zero6">ZERO-6</button>
+        <button class="tablinks" data-tab="perigos_riscos">Perigos e Riscos</button>
+        <button class="tablinks" data-tab="epis">EPIs</button>
+        <button class="tablinks" data-tab="equipamentos">Equipamentos</button>
+        <button class="tablinks" data-tab="finalizacao">Finalização</button>
+    </div>
+    <form method="POST">
+        <div id="dados_essenciais" class="tabcontent active" style="display: block;">
+            <h2>Dados Essenciais</h2>
+            <h4>Demarque abaixo os dados essenciais referentes à Atividade</h4>
+            <label for="setor_select">Setor que a Atividade será realizada</label><br>
+            <select id="setor_select" name="setor">
+                <option value="(P) Prensas">(P) Prensas</option>
+                <option value="(W) Funilaria">(W) Funilaria</option>
+                <option value="(T) Pintura">(T) Pintura</option>
+                <option value="(A) Montagem">(A) Montagem</option>
+            </select><br><br>
+            <label for="empresa">Nome da Empresa:</label><br>
+            <input type="text" id="empresa" name="empresa"><br><br>
+            <label for="descricao">Descrição curta da atividade</label><br>
+            <input type="text" id="descricao" name="descricao" maxlength="40"><br><br>
+            <label for="responsavel_ext">Responsável da Atividade (Contratado)</label><br>
+            <input type="text" id="responsavel_ext" name="responsavel_ext"><br><br>
+            <label for="quantidade_tb">Quantidade de Trabalhadores</label><br>
+            <input type="number" id="quantidade_tb" name="quantidade_tb"><br><br>
+            <label for="data_inicio">Data de Início:</label><br>
+            <input type="date" id="data_inicio" name="data_inicio"><br><br>
+            <label for="hora_inicio">Horário de Início</label><br>
+            <input type="time" id="hora_inicio" name="hora_inicio"><br><br>
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="stop6" class="tabcontent">
+            <h2>STOP-6</h2>
+            <h4>Demarque abaixo possíveis acidentes que podem ocorrer durante a realização da atividade:</h4>
+            <input type="checkbox" id="prensagem" name="stop6" value="prensagem">
+            <label for="prensagem">Prensagem (MÁQ./EQUIP./MAT.)</label><br>
+            <input type="checkbox" id="carga_pesada" name="stop6" value="carga_pesada">
+            <label for="carga_pesada">Carga Pesada (GUINDASTE/EQUIP. DE SUSPENSÃO)</label><br>
+            <input type="checkbox" id="colisao" name="stop6" value="colisao">
+            <label for="colisao">Colisão com Veículos (ATROPELAMENTOS)</label><br>
+            <input type="checkbox" id="queda_altura" name="stop6" value="queda_altura">
+            <label for="queda_altura">Queda de Altura (PESSOAS)</label><br>
+            <input type="checkbox" id="choque" name="stop6" value="choque">
+            <label for="choque">Choque Elétrico (ELETRICIDADE)</label><br>
+            <input type="checkbox" id="queimadura" name="stop6" value="queimadura">
+            <label for="queimadura">Queimadura (TÉRMICA/QUÍMICA)</label><br>
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="zero6" class="tabcontent">
+            <h2>ZERO-6</h2>
+            <h4>Demarque abaixo os possíveis acidentes que podem ocorrer na realização da atividade</h4>
+            <input type="checkbox" id="corte_perfuracao" name="zero6" value="corte_perfuracao">
+            <label for="corte_perfuracao">Corte/Perfuração</label><br>
+            <input type="checkbox" id="queda_material" name="zero6" value="queda_material">
+            <label for="queda_material">Queda de Material</label><br>
+            <input type="checkbox" id="prensagem_zero" name="zero6" value="prensagem_zero">
+            <label for="prensagem_zero">Prensagem</label><br>
+            <input type="checkbox" id="desnivel" name="zero6" value="desnivel">
+            <label for="desnivel">Desnível</label><br>
+            <input type="checkbox" id="batidas_contra" name="zero6" value="batidas_contra">
+            <label for="batidas_contra">Batidas Contra</label><br>
+            <input type="checkbox" id="projecoes" name="zero6" value="projecoes">
+            <label for="projecoes">Projeções</label><br>
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="perigos_riscos" class="tabcontent">
+            <input type="checkbox" id="excesso_peso" name="perigos_riscos" value="excesso_peso">
+            <label for="excesso_peso">Excesso de Peso (Levantamento)</label><br>
+            <input type="checkbox" id="vazamento" name="perigos_riscos" value="vazamento">
+            <label for="vazamento">Vazamento (Tubulações)</label><br>
+            <input type="checkbox" id="derramamento" name="perigos_riscos" value="derramamento">
+            <label for="derramamento">Derramamento (Latas, Tambores, etc...)</label><br>
+            <input type="checkbox" id="produtos_corrosivos" name="perigos_riscos" value="produtos_corrosivos">
+            <label for="produtos_corrosivos">Produtos Corrosivos ou Ácidos</label><br>
+            <input type="checkbox" id="outros_perigos" name="perigos_riscos" value="outros_perigos">
+            <label for="outros_perigos">Outros</label><br>
+            <input type="text" id="outrosInput" style="display: none;" placeholder="Especifique o Perigo/Risco...">
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="epis" class="tabcontent">
+            <h2>EPI's</h2>
+            <h4>Demarque abaixo os EPI's que serão utilizados durante a realização da atividade:</h4>
+            <h5>Lembrando que os seguintes EPI's são de uso obrigatório! Sendo assim, já estão sendo considerados:<hr>
+                Óculos de Proteção,<br>
+                Calçado de Segurança,<br>
+                Capacete com Jugular,<br>
+                Protetor Auricular,<br>
+            </h5>
+            <input type="checkbox" id="mascara" name="epis" value="mascara">
+            <label for="mascara">Máscara</label><br>
+            <input type="checkbox" id="mascara_solda" name="epis" value="mascara_solda">
+            <label for="mascara_solda">Máscara de Solda</label><br>
+            <input type="checkbox" id="creme_protecao" name="epis" value="creme_protecao">
+            <label for="creme_protecao">Creme de Proteção</label><br>
+            <input type="checkbox" id="luvas" name="epis" value="luvas">
+            <label for="luvas">Luvas de Proteção</label><br>
+            <input type="checkbox" id="avental" name="epis" value="avental">
+            <label for="avental">Avental</label><br>
+            <input type="checkbox" id="macacao" name="epis" value="macacao">
+            <label for="macacao">Macacão</label><br>
+            <input type="checkbox" id="protetor_facial" name="epis" value="protetor_facial">
+            <label for="protetor_facial">Protetor Facial</label><br>
+            <input type="checkbox" id="cinto_seg_paraquedista" name="epis" value="cinto_seg_paraquedista">
+            <label for="cinto_seg_paraquedista">Cinto de seg. paraquedista c/ 2 talabartes.</label><br>
+            <input type="checkbox" id="trava_quedas" name="epis" value="trava_quedas">
+            <label for="trava_quedas">Trava quedas</label><br>
+            <input type="checkbox" id="cordas_trabalho_altura" name="epis" value="cordas_trabalho_altura">
+            <label for="cordas_trabalho_altura">Cordas para Trabalho em Altura</label><br>
+            <input type="checkbox" id="mangotes" name="epis" value="mangotes">
+            <label for="mangotes">Mangotes</label><br>
+            <input type="checkbox" id="outros_epi" name="epis" value="outros_epi">
+            <label for="outros_epi">Outros</label><br>
+            <input type="text" id="outros_epi_input" style="display: none;" placeholder="Especifique o EPI...">
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="equipamentos" class="tabcontent">
+            <h2>Equipamentos utilizados no Trabalho</h2>
+            <h4>Demarque abaixo todos os equipamentos que serão utilizados na realização da atividade</h4>
+            <input type="checkbox" id="solda" name="equipamentos" value="solda">
+            <label for="solda">Solda - MIG/TIG/MAC</label><br>
+            <input type="checkbox" id="macarico" name="equipamentos" value="macarico">
+            <label for="macarico">Maçarico</label><br>
+            <input type="checkbox" id="compactadora" name="equipamentos" value="compactadora">
+            <label for="compactadora">Compactadora</label><br>
+            <input type="checkbox" id="lixadeira" name="equipamentos" value="lixadeira">
+            <label for="lixadeira">Lixadeira</label><br>
+            <input type="checkbox" id="serra_marmore" name="equipamentos" value="serra_marmore">
+            <label for="serra_marmore">Serra Mármore</label><br>
+            <input type="checkbox" id="serra_circular" name="equipamentos" value="serra_circular">
+            <label for="serra_circular">Serra Circular/Bancada</label><br>
+            <input type="checkbox" id="furadeira" name="equipamentos" value="furadeira">
+            <label for="furadeira">Furadeira/Parafusadeira</label><br>
+            <input type="checkbox" id="serra_tico_tico" name="equipamentos" value="serra_tico_tico">
+            <label for="serra_tico_tico">Serra Tico Tico</label><br>
+            <input type="checkbox" id="ferramentas_manuais" name="equipamentos" value="ferramentas_manuais">
+            <label for="ferramentas_manuais">Ferramentas Manuais</label><br>
+            <input type="checkbox" id="escada" name="equipamentos" value="escada">
+            <label for="escada">Escada</label><br>
+            <input type="checkbox" id="andaime" name="equipamentos" value="andaime">
+            <label for="andaime">Andaime</label><br>
+            <input type="checkbox" id="plataforma" name="equipamentos" value="plataforma">
+            <label for="plataforma">Plataforma Elevatória</label><br>
+            <input type="checkbox" id="talha" name="equipamentos" value="talha">
+            <label for="talha">Talha - Manual/Elétrica</label><br>
+            <input type="checkbox" id="serra_cliper" name="equipamentos" value="serra_cliper">
+            <label for="serra_cliper">Serra Cliper</label><br>
+            <input type="checkbox" id="outros_equipamentos" name="equipamentos" value="outros_equipamentos">
+            <label for="outros_equipamentos">Outros</label><br>
+            <input type="text" id="outrosInput_equipamentos" style="display: none;" placeholder="Especifique o Equipamento">
+            <button type="button" class="next-tab">Próxima aba</button>
+        </div>
+        <div id="finalizacao" class="tabcontent">
+            <h2>Finalização</h2>
+            <h4>Muito obrigado por usar o PPA</h4>
+            <button type="submit" id="gerar-atep">Gerar ATEP</button>
+            <div id="download-links" style="display: none;">
+                <a href="#" id="download-xlsx" download>Download XLSX</a>
+                <a href="#" id="download-pdf" download>Download PDF</a>
+            </div>
+        </div>
+    </form>
+    <script src="/static/script.js"></script>
+</body>
+</html>
